@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade Criteria</title>
+  </head>
+  <body>
+    <script>
+      var score = prompt("input your result");
+      switch (true) {
+        case (score >= 90 && score <= 100):
+          document.write("A");
+          break;
+
+        case (score >= 80 && score <= 89):
+          document.write("B");
+          break;
+
+        case (score >= 70 && score <= 79):
+          document.write("C");
+          break;
+
+        case (score >= 60 && score <= 69):
+          document.write("D");
+          break;
+
+        default:
+          document.write("Fail");
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+      const grade = prompt("input your result");
+
+      if (grade >= 90 && grade <= 100) {
+        document.write("A");
+      } else if (grade >= 80 && grade <= 89) {
+        document.write("B");
+      } else if (grade >= 70 && grade <= 79) {
+        document.write("C");
+      } else if (grade >= 60 && grade <= 69) {
+        document.write("D");
+      } else {
+        document.write("Fail");
+      }
+    </script>
+  </body>
+</html>
