@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade point</title>
+  </head>
+  <body>
+    <script>
+
+        // With Switch Case
+
+      let point = prompt("input your result");
+      switch (true) {
+        case (point >= 90):
+          document.write("A+");
+          break;
+
+        case (point >= 60):
+          document.write("A");
+          break;
+
+        case (point >= 50 ):
+          document.write("B");
+          break;
+
+        default:
+          document.write("Fail");
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+    //   With If, Else Statement
+
+      const grade = prompt("input your result");
+
+      if (grade >= 90 ) {
+        document.write("A+");
+      } else if (grade >= 60) {
+        document.write("A");
+      } else if (grade >= 50 ) {
+        document.write("B");
+      } else {
+        document.write("Fail");
+      }
+    </script>
+  </body>
+</html>
