@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counting positive, negative and zero and sum</title>
+</head>
+<body>
+    <script>
+        var data = [4, 4, -4, -1, 0, -8, 0, 45, 9, 79];
+
+var result = data.reduce((acc, val) => {
+    acc.sum += val;
+    if (val > 0) acc.positive++;
+    else if (val < 0) acc.negative++;
+    else acc.zero++;
+    return acc;
+}, { positive: 0, negative: 0, zero: 0, sum: 0 });
+
+console.log("Positive:", result.positive);
+console.log("Negative:", result.negative);
+console.log("Zero:", result.zero);
+console.log("Sum:", result.sum);
+
+    </script>
+</body>
+</html>

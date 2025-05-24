@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+  </head>
+
+  <body>
+    <script>
+      // Total
+      var a = 125;
+      var b = 325;
+      var c = 225;
+      var d = 25;
+      var e = 15;
+      var f = 145;
+
+      document.write("Total =" + " " + (a + b + c + d + e + f));
+      document.write("<br>");
+      document.write("<br>");
+      document.write("Total =" + " " + (a + b + c - d - e - f));
+      document.write("<br>");
+      document.write("<br>");
+
+      // boolean value (true/false)
+      document.write(a > b);
+      document.write("<br>");
+      document.write("<br>");
+
+      document.write(c > b);
+      document.write("<br>");
+      document.write("<br>");
+
+      document.write(a > f);
+      document.write("<br>");
+      document.write("<br>");
+
+      // object literal
+
+      var fashion = {
+        model: "777",
+        name: "Gucchi",
+        address: "London",
+      };
+      document.write(typeof fashion);
+      document.write("<br>");
+      document.write("<br>");
+
+      document.write(
+        fashion.model + "   " + fashion.name + " " + fashion.address
+      );
+      document.write("<br>");
+      document.write("<br>");
+
+      // Array
+
+      var ary = ["Honda", "Ferrai", "BMW"];
+
+      document.write(ary[0]);
+      document.write("<br>");
+      document.write("<br>");
+
+      document.write(ary[1]);
+      document.write("<br>");
+      document.write("<br>");
+
+      document.write(ary[2]);
+
+      document.write("<br>");
+      document.write("<br>");
+
+      // Largest number
+
+      const p = parseFloat(prompt("Enter value : "));
+      const q = parseFloat(prompt("Enter value : "));
+      const r = parseFloat(prompt("Enter value : "));
+
+      if (p > q && p > r) {
+        document.write("The Largest Number is " + p);
+      } else if (q > p && q > r) {
+        document.write("The Largest Number is " + q);
+      } else {
+        document.write("The Largest Number is " + r);
+      }
+
+      document.write("<br>");
+      document.write("<br>");
+
+      //Smallest number
+
+      const s = parseFloat(prompt("Enter value : "));
+      const t = parseFloat(prompt("Enter value : "));
+      const u = parseFloat(prompt("Enter value : "));
+
+      if (s < t && s < t) {
+        document.write("The Smallest Number is " + s);
+      } else if (t < s && t < u) {
+        document.write("The Smallest Number is " + t);
+      } else {
+        document.write("The Smallest Number is " + u);
+      }
+    </script>
+  </body>
+</html>

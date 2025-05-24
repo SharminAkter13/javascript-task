@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find smallest number</title>
+</head>
+<body>
+    <script>
+        // find smallest number
+
+        let x = (parseFloat(prompt("Enter 1st number")))
+        let y = (parseFloat(prompt("Enter 2nd number")))
+        let z = (parseFloat(prompt("Enter 3rd number")))
+
+        if((x<y) && (x<z)){
+            document.write("The Smallest Number is" +" " + x)
+        }else if((y<x) && (y<z)){
+            document.write("The Smallest Number is" +" " + y)
+        }else{
+            document.write("The Smallest Number is" +" " + z)
+        }
+    </script>
+</body>
+</html>
