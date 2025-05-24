@@ -9,32 +9,32 @@
   <body>
     <script>
       // Total
-      var a = 125;
-      var b = 325;
-      var c = 225;
-      var d = 25;
-      var e = 15;
-      var f = 145;
+      // var a = 125;
+      // var b = 325;
+      // var c = 225;
+      // var d = 25;
+      // var e = 15;
+      // var f = 145;
 
-      document.write("Total =" + " " + (a + b + c + d + e + f));
-      document.write("<br>");
-      document.write("<br>");
-      document.write("Total =" + " " + (a + b + c - d - e - f));
-      document.write("<br>");
-      document.write("<br>");
+      // document.write("Total =" + " " + (a + b + c + d + e + f));
+      // document.write("<br>");
+      // document.write("<br>");
+      // document.write("Total =" + " " + (a + b + c - d - e - f));
+      // document.write("<br>");
+      // document.write("<br>");
 
-      // boolean value (true/false)
-      document.write(a > b);
-      document.write("<br>");
-      document.write("<br>");
+      // // boolean value (true/false)
+      // document.write(a > b);
+      // document.write("<br>");
+      // document.write("<br>");
 
-      document.write(c > b);
-      document.write("<br>");
-      document.write("<br>");
+      // document.write(c > b);
+      // document.write("<br>");
+      // document.write("<br>");
 
-      document.write(a > f);
-      document.write("<br>");
-      document.write("<br>");
+      // document.write(a > f);
+      // document.write("<br>");
+      // document.write("<br>");
 
       // object literal
 
@@ -100,6 +100,34 @@
       } else {
         document.write("The Smallest Number is " + u);
       }
+      document.write("<br>");
+      document.write("<br>");
+
+      // Desending Order
+
+      let a = parseInt(prompt("enter value:"));
+      let b = parseInt(prompt("enter value:"));
+      let c = parseInt(prompt("enter value:"));
+
+      if (a > b) {
+        des = a;
+        a = b;
+        b = des;
+      }
+
+      if (a > c) {
+        des = c;
+        c = a;
+        a = des;
+      }
+
+      if (b > c) {
+        des = b;
+        b = c;
+        c = des;
+      }
+
+      document.write(a + "," + b + "," + c);
     </script>
   </body>
 </html>

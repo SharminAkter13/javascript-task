@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascending Order</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desending Order</title>
+  </head>
+  <body>
     <script>
-        let x = (parseInt(prompt("Enter 1st Number")));
-        let y = (parseInt(prompt("Enter 2nd Number")));
-        let z = (parseInt(prompt("Enter 3rd Number")));
-        if (x<y){
-            ascending = x;
-            x =y;
-            y=ascending;
-        }
+      let x = parseInt(prompt("Enter 1st Number"));
+      let y = parseInt(prompt("Enter 2nd Number"));
+      let z = parseInt(prompt("Enter 3rd Number"));
+      if (x < y) {
+        desending = x;
+        x = y;
+        y = desending;
+      }
 
-                if (x<z){
-            ascending = z;
-            z =x;
-            x=ascending;
-        }
+      if (x < z) {
+        desending = z;
+        z = x;
+        x = desending;
+      }
 
-                if (y<z){
-            ascending = y;
-            y =z;
-            z=ascending;
-        }
+      if (y < z) {
+        desending = y;
+        y = z;
+        z = desending;
+      }
 
-        document.write(x + ","+ y + "," + z)
+      document.write(x + "," + y + "," + z);
     </script>
-</body>
+  </body>
 </html>
