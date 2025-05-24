@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desending Order</title>
+</head>
+<body>
+   <script>
+    let p = (parseInt(prompt("Enter 1st Number:")));
+    let q = (parseInt(prompt("Enter 2nd Number:")));
+    let r = (parseInt(prompt("Enter 3rd Number:")));
+
+    if (p<q){
+        des=p;
+        p=q;
+        q=des;
+    } if (p<r){
+        des=r;
+        r=p;
+        p=des;
+    } if (q<r){
+        des=q;
+        q=r;
+        r=des;
+    }
+
+    document.write(p+","+q+","+r);
+    console.log(p+","+q+","+r);
+   </script> 
+</body>
+</html>
