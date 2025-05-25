@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Largest Number Small number and sum</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        var data=[20,4,8,9,15,78,3,6];
-        var l =data[0];
-        var s =data[0];
-        var sum =data[0];
-        for(i=0;i<data.length;i++){
-            if(s>data[i]){
-                s=data[i];
-            }else if(l>data[i]){
-                l=data[i];
-            }
-            sum+= data[i];
+      var data = [20, 4, 8, 9, 15, 78, 3, 6];
+      var l = data[0];
+      var s = data[0];
+      var sum = data[0];
+      for (i = 0; i < data.length; i = i + 1) {
+        if (s > data[i]) {
+          s = data[i];
+        } else if (l < data[i]) {
+          l = data[i];
         }
+        sum += data[i];
+      }
 
-        document.write("Small Number: "+s+"<br>");
-     document.write("Large Number: "+l+"<br>");
-     document.write("Total Number:"+sum);
+      document.write("Small Number: " + s + "<br>");
+      document.write("Large Number: " + l + "<br>");
+      document.write("Total Number:" + sum);
     </script>
-</body>
+  </body>
 </html>
