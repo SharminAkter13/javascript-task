@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ascending Order</title>
-</head>
-<body>
-   <script>
-    let p = (parseInt(prompt("Enter 1st Number:")));
-    let q = (parseInt(prompt("Enter 2nd Number:")));
-    let r = (parseInt(prompt("Enter 3rd Number:")));
+  </head>
+  <body>
+    <script>
+      let p = parseInt(prompt("Enter 1st Number:"));
+      let q = parseInt(prompt("Enter 2nd Number:"));
+      let r = parseInt(prompt("Enter 3rd Number:"));
 
-    if (p>q){
-        asce=p;
-        p=q;
-        q=asce;
-    } if (p>r){
-        asce=r;
-        r=p;
-        p=asce;
-    } if (q>r){
-        asce=q;
-        q=r;
-        r=asce;
-    }
+      // if (p>q){
+      //     asce=p;
+      //     p=q;
+      //     q=asce;
+      // } if (p>r){
+      //     asce=r;
+      //     r=p;
+      //     p=asce;
+      // } if (q>r){
+      //     asce=q;
+      //     q=r;
+      //     r=asce;
+      // }
 
-    document.write(p+","+q+","+r);
-    console.log(p+","+q+","+r);
-   </script> 
-</body>
+      // document.write(p+","+q+","+r);
+      // console.log(p+","+q+","+r);
+
+      if (p > q) {
+        asce = p;
+        p = q;
+        q = asce;
+      }
+      if (p > r) {
+        asce = r;
+        r = p;
+        p = asce;
+      }
+      if (q > r) {
+        asce = q;
+        q = r;
+        r = asce;
+      }
+      document.write(p + "," + q + "," + r);
+    </script>
+  </body>
 </html>
