@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In Loop</title>
+</head>
+<body>
+    <script>
+    // for in loop
+    const brand =["Ferrari","BMW","Nissan","Porsche","Ford","Hyundai"];
+    for (b in brand)
+    {
+        document.write(b+"---");
+        document.write(brand[b]+"<br>");
+    }
+
+     document.write("<br>");
+      document.write("<br>");
+      
+    const model = [77,88,99,44,55,66,11,22,33];
+      for (m in model) {
+        document.write(model[m] + "<br>");
+      }
+      document.write("<br>");
+      document.write("<br>");
+
+       const user = {
+        name: "Ayaan",
+        age: 22,
+        email: "ayaan@gmail.com",
+        address: "Newyork",
+      };
+
+      for (a in user) {
+        document.write(user[a] + "<br>");
+      }
+
+    </script>
+</body>
+</html>
