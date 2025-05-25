@@ -7,11 +7,28 @@
   </head>
   <body>
     <script>
+      //   var data = [20, 4, 8, 9, 15, 78, 3, 6];
+      //   var l = data[0];
+      //   var s = data[0];
+      //   var sum = data[0];
+      //   for (i = 0; i < data.length; i++) {
+      //     if (s > data[i]) {
+      //       s = data[i];
+      //     } else if (l < data[i]) {
+      //       l = data[i];
+      //     }
+      //     sum += data[i];
+      //   }
+
+      //   document.write("Small Number: " + s + "<br>");
+      //   document.write("Large Number: " + l + "<br>");
+      //   document.write("Total Number:" + sum);
       var data = [20, 4, 8, 9, 15, 78, 3, 6];
-      var l = data[0];
       var s = data[0];
+      var l = data[0];
       var sum = data[0];
-      for (i = 0; i < data.length; i = i + 1) {
+
+      for (i = 0; i < data.length; i++) {
         if (s > data[i]) {
           s = data[i];
         } else if (l < data[i]) {
@@ -20,9 +37,9 @@
         sum += data[i];
       }
 
-      document.write("Small Number: " + s + "<br>");
-      document.write("Large Number: " + l + "<br>");
-      document.write("Total Number:" + sum);
+      document.write("The Smallest Number =" + " " + s + "<br>");
+      document.write("The Largest Number =" + " " + l + "<br>");
+      document.write("Total/Sum =" + " " + sum + "<br>");
     </script>
   </body>
 </html>

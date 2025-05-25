@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counting Positive, Negative , Zero and sum up numbers</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        var data = [4,4,-4,-1,0,-8,0,45,9,79];
-        var pos =0;
-        var neg =0;
-        var zero =0;
-        var sum=0;
-        for(i=0; i<data.length; i++){
-            if (data[i]>0){
-                pos++;
-            }else if (data[i]<0){
-                neg++;
-            }else{
-                zero++;
-            }
-            sum+= data[i];
-        }
-        document.write("Total Positive Number ="+" "+pos +"<br>");
-        document.write("Total Negative Number ="+" "+neg+"<br>");
-        document.write("Total Zero Number ="+" "+zero+"<br>");
-        document.write("Total/Sum ="+sum);
-    </script>
+      var data = [4, 4, -4, -1, 0, -8, 0, 45, 9, 79];
+      // var pos =0;
+      // var neg =0;
+      // var zero =0;
+      // var sum=0;
+      // for(i=0; i<data.length; i++){
+      //     if (data[i]>0){
+      //         pos++;
+      //     }else if (data[i]<0){
+      //         neg++;
+      //     }else{
+      //         zero++;
+      //     }
+      //     sum+= data[i];
+      // }
+      // document.write("Total Positive Number ="+" "+pos +"<br>");
+      // document.write("Total Negative Number ="+" "+neg+"<br>");
+      // document.write("Total Zero Number ="+" "+zero+"<br>");
+      // document.write("Total/Sum ="+sum);
 
-</body>
+      var pos = 0;
+      var neg = 0;
+      var zero = 0;
+      var sum = 0;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] > 0) {
+          pos++;
+        } else if (data[i] < 0) {
+          neg++;
+        } else {
+          zero++;
+        }
+        sum += data[i];
+      }
+
+      document.write("Total Positive number =" + " " + pos + "<br>");
+      document.write("Total Negative number =" + " " + neg + "<br>");
+      document.write("Total Zero number =" + " " + zero + "<br>");
+      document.write("Total/Sum =" + " " + sum + "<br>");
+    </script>
+  </body>
 </html>
