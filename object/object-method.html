@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars Object Model</title>
+  </head>
+  <body>
+    <h1>Car Object</h1>
+    <script>
+      const car = {
+        name: "FERRAI",
+        model: 500,
+        weight: "850kg",
+        color: "white",
+        start: function () {
+          return "Lets Start the engine of"+ this.name;
+        },
+        drive: function () {
+          return "We are ready To Drive "+ this.name;
+        },
+        brake: function () {
+          return " Use the brakes carefully "+ this.name;
+        },
+        stop: function () {
+          return " Stop the car while you reach your destination. Happy Ride- "+ this.name;
+        },
+      };
+
+      console.log(car.start());
+      console.log(car.drive());
+      console.log(car.brake());
+      console.log(car.stop());
+      document.write(car.start());
+      document.write("<br>");
+      document.write(car.drive());
+      document.write("<br>");
+
+      document.write(car.brake());
+      document.write("<br>");
+
+      document.write(car.stop());
+      document.write("<br>");
+
+      document.write("car.name" + "=" + car.name + "<br>");
+      document.write("car.model" + "=" + car.model + "<br>");
+      document.write("car.weight" + "=" + car.weight + "<br>");
+      document.write("car.color" + "=" + car.color + "<br>");
+    </script>
+  </body>
+</html>
