@@ -8,22 +8,21 @@
   <body>
     <script>
       let n = parseInt(prompt());
-      let m = 0;
+      let prime = 0;
 
-      if (n == 0 || n == 1) {
-        console.log("The number is neither prime nor composite number");
-        document.write("The number is neither prime nor composite number");
-      } else if (n > 1) {
+      if (n == 1 || n == 0) {
+        document.write("The number is not prime or compositor");
+      } else {
         for (i = 2; i < n; i++) {
           if (n % i == 0) {
-            console.log("The number is not prime");
-            document.write("The number is not prime");
-            m++;
+            prime++;
             break;
-          } else {
-            console.log("The number is  prime");
-            document.write("The number is  prime");
           }
+        }
+        if (prime == 0) {
+          document.write(n + " " + "is a prime number");
+        } else {
+          document.write(n + " " + "is not a prime number");
         }
       }
     </script>
