@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const n = parseInt(prompt("Enter a positive number: "));
+let isPrime = true;
+
+
+if (n==1 || n==0) {
+    console.log("The number is neither prime nor composite number.");
+    document.write("The number is neither prime nor composite number.");
+}
+else if (n > 1) {
+
+    for (let i = 2; i <= n/2; i++) {
+        if (n % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        console.log(n+" "+" is a prime number");
+        document.write(n+' '+" is a prime number");
+    } else {
+        console.log(n+" "+ "is a not prime number");
+       document.write(n+" "+ "is a not prime number");
+    }
+}
+
+else {
+    console.log("The number is not a prime number.");
+document.write("The number is not a prime number.");
+}
+
+    </script>
+</body>
+</html>
