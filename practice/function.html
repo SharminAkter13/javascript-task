@@ -53,24 +53,75 @@
 
 
 
-          //   function add(x, y) {
-      //     return x + y;
-      //   }
-      //   console.log(add(5, 6));
+    //       //   function add(x, y) {
+    //   //     return x + y;
+    //   //   }
+    //   //   console.log(add(5, 6));
 
-      // single line of code
+    //   // single line of code
 
-      const sum = (x, y) => x + y;
-      console.log(sum(56, 32));
+    //   const sum = (x, y) => x + y;
+    //   console.log(sum(56, 32));
 
-      //   Multiple line of code
-      const large = (a, b) => {
-        if (a > b) return "a is larger";
-        else return "b is larger";
-      };
-      console.log(large(90, 15));
-      const greeting = (name) => "Hello" + " " + name + "!!!";
-      console.log(greeting("Fateh Bin Ramjel"));
+    //   //   Multiple line of code
+    //   const large = (a, b) => {
+    //     if (a > b) return "a is larger";
+    //     else return "b is larger";
+    //   };
+    //   console.log(large(90, 15));
+    //   const greeting = (name) => "Hello" + " " + name + "!!!";
+    //   console.log(greeting("Fateh Bin Ramjel"));
+
+
+    //  Javascript Local Scope
+      document.write(equation());
+      document.write("<br>");
+
+      function equation() {
+        let x = 5;
+        return x == x;
+      }
+
+      equation(6, 6);
+      //  Global Scope / public function closure
+
+      document.write("<br>" + " global scope:" + "<br>" + "<br>");
+
+      let u = 9;
+      let v = 5;
+
+      function s() {
+        return u - v;
+      }
+
+      document.write(subs());
+      document.write("<br>");
+
+      function m() {
+        return u * v;
+      }
+
+      document.write(m() + "<br>");
+      document.write("<br>" + " local scope:" + "<br>" + "<br>");
+
+      //  Local Scope / Private function closure
+
+      function s2() {
+        let s = 15;
+        let t = 5;
+        return s - t;
+      }
+
+      document.write(s2());
+      document.write("<br>");
+
+      function m2() {
+        return s * t;
+      }
+
+      document.write(m2());
+      document.write("<br>");
+
     </script>
   </body>
 </html>
