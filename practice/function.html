@@ -42,13 +42,35 @@
     //   sums(32, 55); //32,55 are arguements
 
 
-    // An anonymous function that returns the square of number
-      const a = function () {
-        return (
-          "⭐!!!BONJOUR!!!⭐" 
-        );
+    // // An anonymous function that returns the square of number
+    //   const a = function () {
+    //     return (
+    //       "⭐!!!BONJOUR!!!⭐" 
+    //     );
+    //   };
+    //   document.write(a());
+
+
+
+
+          //   function add(x, y) {
+      //     return x + y;
+      //   }
+      //   console.log(add(5, 6));
+
+      // single line of code
+
+      const sum = (x, y) => x + y;
+      console.log(sum(56, 32));
+
+      //   Multiple line of code
+      const large = (a, b) => {
+        if (a > b) return "a is larger";
+        else return "b is larger";
       };
-      document.write(a());
+      console.log(large(90, 15));
+      const greeting = (name) => "Hello" + " " + name + "!!!";
+      console.log(greeting("Fateh Bin Ramjel"));
     </script>
   </body>
 </html>
