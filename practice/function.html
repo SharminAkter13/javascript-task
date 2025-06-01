@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Function</title>
+        <style>
+      button {
+        width: 200px;
+        height: 50px;
+        background-color: rgb(134, 7, 9);
+        color: aliceblue;
+        font-weight: bolder;
+        font-size: 20pt;
+        border: 2px solid rgb(160, 35, 74);
+        border-radius: 15px;
+      }
+    </style>
   </head>
   <body>
+    <h1>WE PARY FOR YOUR SUCCESS</h1>
+    <button onclick="cong()">Congratulation</button>
     <script>
     //   function greeting() {
     //     document.write("Hello!!!" + "<br>" + "<br>");
@@ -51,7 +65,7 @@
     //   document.write(a());
 
 
-
+      // Arrow function
 
     //       //   function add(x, y) {
     //   //     return x + y;
@@ -73,55 +87,92 @@
     //   console.log(greeting("Fateh Bin Ramjel"));
 
 
-    //  Javascript Local Scope
-      document.write(equation());
-      document.write("<br>");
+    // //  Javascript Local Scope
+    //   document.write(equation());
+    //   document.write("<br>");
 
-      function equation() {
-        let x = 5;
-        return x == x;
-      }
+    //   function equation() {
+    //     let x = 5;
+    //     return x == x;
+    //   }
 
-      equation(6, 6);
-      //  Global Scope / public function closure
+    //   equation(6, 6);
+    //   //  Global Scope / public function closure
 
-      document.write("<br>" + " global scope:" + "<br>" + "<br>");
+    //   document.write("<br>" + " global scope:" + "<br>" + "<br>");
 
-      let u = 9;
-      let v = 5;
+    //   let u = 9;
+    //   let v = 5;
 
-      function s() {
-        return u - v;
-      }
+    //   function s() {
+    //     return u - v;
+    //   }
 
-      document.write(subs());
-      document.write("<br>");
+    //   document.write(subs());
+    //   document.write("<br>");
 
-      function m() {
-        return u * v;
-      }
+    //   function m() {
+    //     return u * v;
+    //   }
 
-      document.write(m() + "<br>");
-      document.write("<br>" + " local scope:" + "<br>" + "<br>");
+    //   document.write(m() + "<br>");
+    //   document.write("<br>" + " local scope:" + "<br>" + "<br>");
 
-      //  Local Scope / Private function closure
+    //   //  Local Scope / Private function closure
 
-      function s2() {
-        let s = 15;
-        let t = 5;
-        return s - t;
-      }
+    //   function s2() {
+    //     let s = 15;
+    //     let t = 5;
+    //     return s - t;
+    //   }
 
-      document.write(s2());
-      document.write("<br>");
+    //   document.write(s2());
+    //   document.write("<br>");
 
-      function m2() {
-        return s * t;
-      }
+    //   function m2() {
+    //     return s * t;
+    //   }
 
-      document.write(m2());
-      document.write("<br>");
+    //   document.write(m2());
+    //   document.write("<br>");
 
-    </script>
+
+  //   // Constructor function
+
+  //   function ads (brand,concept,model,budget){
+  //     this.brand =brand;
+  //     this.concept =concept;
+  //     this.model =model;
+  //     this.budget =budget;
+  //     this.details=function(){
+  //       document.write("This Year Top Brand - "+ this.brand+"having a fashion show with the concept of -"+this.concept+"with famous model - "+this.model+"It's a huge event which gonna cost "+this.budget+"million dollar"+"<br>"+"<br>")
+
+  //     }
+  //   }
+
+
+  //   let ads1 = new ads("Gucci" , "Forest","Gigi Hadid",100);
+  //   let ads2= new ads("Gucci" , "Forest","Gigi Hadid",100);
+  //   let ads3= new ads("Gucci" , "Forest","Gigi Hadid",100);
+  //   let ads4= new ads("Gucci" , "Forest","Gigi Hadid",100);
+  //  ads1.details();
+  //  ads2.details();
+  //  ads3.details();
+  //  ads4.details();
+   
+
+      // // Event Function
+
+      // function cong (){
+      //   alert ("💐💐💐Congratulation💐💐💐")
+      // }
+
+
+      // IIFE Function
+      (function(a,b){
+        console.log(a+b);
+      })(145,25)
+
+   </script>
   </body>
 </html>
