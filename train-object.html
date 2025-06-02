@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Train Simulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #87CEEB, #ffffff);
+      overflow-x: hidden;
+    }
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      background: url('https://cdn.pixabay.com/photo/2016/04/01/09/44/grass-1295394_960_720.png') repeat-x;
+      background-size: cover;
+      animation: backgroundMove 20s linear infinite;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0 0; }
+      100% { background-position: -2000px 0; }
+    }
+
+    #trainImage {
+      width: 300px;
+      transition: transform 1s ease;
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #status {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚆 Interactive Train Simulator</h1>
+
+  <select id="trainSelector" onchange="changeTrain()">
+    <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Train_icon.svg/512px-Train_icon.svg.png">Classic Train</option>
+    <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Bullet_train_icon.svg/512px-Bullet_train_icon.svg.png">Bullet Train</option>
+    <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Toy_train_icon.svg/512px-Toy_train_icon.svg.png">Toy Train</option>
+  </select>
+
+  <div class="scene">
+    <img id="trainImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Train_icon.svg/512px-Train_icon.svg.png" alt="Train">
+  </div>
+
+  <div>
+    <button class="button" onclick="train.start()">Start</button>
+    <button class="button" onclick="train.run(80)">Run</button>
+    <button class="button" onclick="train.reachStation('Central Station')">Reach Station</button>
+    <button class="button" onclick="train.stop()">Stop</button>
+  </div>
+
+  <div id="status">Status: Waiting to start...</div>
+
+  <!-- Sound effects -->
+  <audio id="startSound" src="https://actions.google.com/sounds/v1/vehicles/train_whistle.ogg"></audio>
+  <audio id="runSound" src="https://actions.google.com/sounds/v1/transportation/train.ogg" loop></audio>
+  <audio id="stopSound" src="https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg"></audio>
+
+  <script>
+    const startSound = document.getElementById("startSound");
+    const runSound = document.getElementById("runSound");
+    const stopSound = document.getElementById("stopSound");
+
+    const train = {
+      name: "Express Line",
+      currentSpeed: 0,
+      status: "stopped",
+
+      updateStatus: function (message) {
+        document.getElementById("status").textContent = "Status: " + message;
+      },
+
+      start: function () {
+        this.status = "started";
+        this.updateStatus(`${this.name} has started.`);
+        startSound.play();
+      },
+
+      run: function (speed) {
+        if (this.status === "started") {
+          this.currentSpeed = speed;
+          this.status = "running";
+          document.getElementById("trainImage").style.transform = "translateX(200px)";
+          runSound.play();
+          this.updateStatus(`${this.name} is running at ${this.currentSpeed} km/h.`);
+        } else {
+          this.updateStatus(`Start the train before running.`);
+        }
+      },
+
+      reachStation: function (stationName) {
+        if (this.status === "running") {
+          this.updateStatus(`${this.name} is reaching ${stationName}.`);
+        } else {
+          this.updateStatus(`${this.name} is not running currently.`);
+        }
+      },
+
+      stop: function () {
+        if (this.status !== "stopped") {
+          this.currentSpeed = 0;
+          this.status = "stopped";
+          document.getElementById("trainImage").style.transform = "translateX(0)";
+          runSound.pause();
+          runSound.currentTime = 0;
+          stopSound.play();
+          this.updateStatus(`${this.name} has stopped.`);
+        } else {
+          this.updateStatus(`${this.name} is already stopped.`);
+        }
+      }
+    };
+
+    function changeTrain() {
+      const selectedURL = document.getElementById("trainSelector").value;
+      document.getElementById("trainImage").src = selectedURL;
+    }
+  </script>
+
+</body>
+</html>
