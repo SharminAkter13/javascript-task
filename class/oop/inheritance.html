@@ -16,13 +16,13 @@
                 this.session= s;
             }
             result(){
-                return this.name+" has obtain GPA "+this.gpa+" in exam session "+this.session
+                return this.name+" has obtain GPA "+this.gpa+" in  SSC exam session "+this.session
 
             }
         }
           
         const student1 = new ssc ("Mishel Abdullah",14587,124786548,5,"2015-16");
-        document.write("SSC Result");
+        document.write("SSC Result:");
         document.write("<br>");
         document.write("<br>");
         document.write(student1.result());
@@ -36,12 +36,16 @@
                 super(n,r,reg,gpa,s);
             }
             result1(){
-                return this.name+" has obtain GPA "+this.gpa+" in exam session "+this.session
+                return this.name+" has obtain GPA "+this.gpa+" in HSC exam session "+this.session
 
             }
         }
         const student2 = new hsc("Mishel Abdullah",16887,124786548, 5,"2016-17")
         console.log(student2);
+        document.write("HSC Result:");
+        document.write("<br>");
+        document.write("<br>");
+        document.write(student2.result1())
  </script> 
 </body>
 </html>
