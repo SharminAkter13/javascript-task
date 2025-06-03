@@ -22,7 +22,26 @@
         }
           
         const student1 = new ssc ("Mishel Abdullah",14587,124786548,5,"2015-16");
-        
-    </script>
+        document.write("SSC Result");
+        document.write("<br>");
+        document.write("<br>");
+        document.write(student1.result());
+        console.log(student1);
+        document.write("<br>");
+        document.write("<br>");
+
+ 
+        class hsc extends ssc {
+            constructor (n,r,reg,gpa,s){
+                super(n,r,reg,gpa,s);
+            }
+            result1(){
+                return this.name+" has obtain GPA "+this.gpa+" in exam session "+this.session
+
+            }
+        }
+        const student2 = new hsc("Mishel Abdullah",16887,124786548, 5,"2016-17")
+        console.log(student2);
+ </script> 
 </body>
 </html>
