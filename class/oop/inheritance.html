@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance / Subclass</title>
+</head>
+<body>
+    <script>
+        class ssc {
+            constructor (n,r,reg,gpa,s){
+                this.name= n;
+                this.roll= r;
+                this.reg= reg;
+                this.gpa= gpa;
+                this.session= s;
+            }
+            result(){
+                return this.name+" has obtain GPA "+this.gpa+" in exam session "+this.session
+
+            }
+        }
+          
+        const student1 = new ssc ("Mishel Abdullah",14587,124786548,5,"2015-16");
+        
+    </script>
+</body>
+</html>
