@@ -11,15 +11,16 @@
       padding: 0;
       background: linear-gradient(to top, #87CEEB, #ffffff);
       overflow-x: hidden;
+       background: url('peakpx.jpg') no-repeat;
+      background-size: cover;
+      animation: moveBackground 10s linear infinite;
+            animation-play-state: paused;
     }
     .scene {
       position: relative;
       width: 100%;
       height: 300px;
-      background: url('peakpx.jpg') repeat-x;
-      background-size: cover;
-      animation: moveBackground 10s linear infinite;
-            animation-play-state: paused;
+     
         }
 
     @keyframes backgroundMove {
@@ -66,7 +67,7 @@
   </select>
 
   <div class="scene">
-    <img id="trainImage" src="bullet-train.png" alt="Train">
+    <img id="trainImage" src="train_13471969.png" alt="Train">
   </div>
 
   <div>
