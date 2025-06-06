@@ -87,19 +87,32 @@
   <div class="scene" id="scene">
     <div class="train" id="train"></div>
   </div>
+  <!-- Sound files -->
+  <audio id="startSound" src="train_whistle.mp3"></audio>
+  <audio id="stopSound" src="trainstops.mp3"></audio>
 
   <script>
     const train = document.getElementById('train');
     const scene = document.getElementById('scene');
+    const startSound = document.getElementById('startSound');
+    const stopSound = document.getElementById('stopSound');
 
     function startAnimation() {
       train.classList.add('animate');
       scene.classList.add('animate');
+            stopSound.pause();
+      stopSound.currentTime = 0;
+      startSound.currentTime = 0;
+      startSound.play();
     }
 
     function stopAnimation() {
       train.classList.remove('animate');
       scene.classList.remove('animate');
+       startSound.pause();
+      startSound.currentTime = 0;
+      stopSound.currentTime = 0;
+      stopSound.play();
     }
   </script>
 
