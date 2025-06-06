@@ -63,7 +63,7 @@
   </select>
 
   <div class="scene">
-    <img id="trainImage" src="train-cargo.png" alt="Train">
+    <img id="trainImage" src="bullet-train.png" alt="Train">
   </div>
 
   <div>
@@ -89,6 +89,9 @@
       name: "Express Line",
       currentSpeed: 0,
       status: "stopped",
+      position: 0,
+interval: null,
+
 
       updateStatus: function (message) {
         document.getElementById("status").textContent = "Status: " + message;
@@ -101,16 +104,25 @@
       },
 
       run: function (speed) {
-        if (this.status === "started") {
-          this.currentSpeed = speed;
-          this.status = "running";
-          document.getElementById("trainImage").style.transform = "translateX(200px)";
-          runSound.play();
-          this.updateStatus(`${this.name} is running at ${this.currentSpeed} km/h.`);
-        } else {
-          this.updateStatus(`Start the train before running.`);
-        }
-      },
+  if (this.status === "started" || this.status === "stopped") {
+    this.currentSpeed = speed;
+    this.status = "running";
+    this.position = this.position || 0;
+
+    runSound.play();
+
+    // Start animation loop
+    this.interval = setInterval(() => {
+      this.position += this.currentSpeed / 10; // move faster based on speed
+      document.getElementById("trainImage").style.transform = `translateX(${this.position}px)`;
+    }, 100);
+
+    this.updateStatus(`${this.name} is running at ${this.currentSpeed} km/h.`);
+  } else {
+    this.updateStatus(`Start the train before running.`);
+  }
+},
+
 
       reachStation: function (stationName) {
         if (this.status === "running") {
@@ -121,18 +133,29 @@
       },
 
       stop: function () {
-        if (this.status !== "stopped") {
-          this.currentSpeed = 0;
-          this.status = "stopped";
-          document.getElementById("trainImage").style.transform = "translateX(0)";
-          runSound.pause();
-          runSound.currentTime = 0;
-          stopSound.play();
-          this.updateStatus(`${this.name} has stopped.`);
-        } else {
-          this.updateStatus(`${this.name} is already stopped.`);
-        }
+  if (this.status === "running") {
+    this.status = "slowing";
+
+    const slowDown = setInterval(() => {
+      if (this.currentSpeed > 0) {
+        this.currentSpeed -= 5; // gradually decrease speed
+        this.updateStatus(`${this.name} is slowing down... Speed: ${this.currentSpeed} km/h`);
+      } else {
+        clearInterval(slowDown);
+        clearInterval(this.interval);
+        this.status = "stopped";
+        runSound.pause();
+        runSound.currentTime = 0;
+        stopSound.play();
+        this.updateStatus(`${this.name} has stopped.`);
       }
+    }, 200);
+  } else {
+    this.updateStatus(`${this.name} is not running.`);
+  }
+}
+
+
     };
 
     function changeTrain() {
