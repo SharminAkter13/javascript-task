@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Pattern III</title>
+</head>
+
+<body>
+    <h1>Triangle Pattern III</h1>
+    <script>
+        let rows = 5;
+        // variable contains the next element of the pattern
+        let variable = 1;
+        // pattern variable carries the final pattern in string format
+        let pattern = "";
+
+        for (n = 1; n <= rows; n++) {
+            for (num = 1; num <= n; num++) {
+                pattern += variable + " ";
+                variable++
+            }
+            pattern += "<br> \n"
+        }
+
+        console.log(pattern);
+        document.write(pattern);
+
+    </script>
+</body>
+
+</html>
