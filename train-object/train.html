@@ -1,120 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Train Animation</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <title>Train Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
 
-    .scene {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      background-image: url('peakpx.jpg'); /* Replace with your background */
-      background-repeat: repeat-x;
-      background-position: 0 0;
-      background-size: cover;
-      animation: moveBackground 10s linear infinite;
-      animation-play-state: paused;
-    }
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('peakpx.jpg');
+            /* Replace with your background */
+            background-repeat: repeat-x;
+            background-position: 0 0;
+            background-size: cover;
+            animation: moveBackground 10s linear infinite;
+            animation-play-state: paused;
+        }
 
-    .train {
-      position: absolute;
-      bottom: 10%;
-      left: 0;
-      width: 600px;
-      height: 150px;
-      background-image: url('Icon_train.svg.png'); /* Replace with your train image */
-      background-size: contain;
-      background-repeat: no-repeat;
-      animation: moveTrain 5s linear infinite;
-      animation-play-state: paused;
-    }
+        .train {
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            width: 600px;
+            height: 150px;
+            background-image: url('Icon_train.svg.png');
+            /* Replace with your train image */
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: moveTrain 5s linear infinite;
+            animation-play-state: paused;
+        }
 
-    .animate {
-      animation-play-state: running !important;
-    }
+        .animate {
+            animation-play-state: running !important;
+        }
 
-    @keyframes moveTrain {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(100vw);
-      }
-    }
+        @keyframes moveTrain {
+            from {
+                transform: translateX(0);
+            }
 
-    @keyframes moveBackground {
-      from {
-        background-position: 0 0;
-      }
-      to {
-        background-position: -1000px 0;
-      }
-    }
+            to {
+                transform: translateX(100vw);
+            }
+        }
 
-    .controls {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 10;
-    }
+        @keyframes moveBackground {
+            from {
+                background-position: 0 0;
+            }
 
-    .controls button {
-      margin-right: 10px;
-      padding: 15px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background-color: rgb(72, 143, 93);
-      color: aliceblue;
-      font-weight: bolder;
-      border-radius: 10px;
-      border: 3px solid rgb(181, 245, 220);
+            to {
+                background-position: -1000px 0;
+            }
+        }
 
-    }
-  </style>
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .controls button {
+            margin-right: 10px;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(72, 143, 93);
+            color: aliceblue;
+            font-weight: bolder;
+            border-radius: 10px;
+            border: 3px solid rgb(181, 245, 220);
+
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="controls">
-    <button onclick="startAnimation()">Start</button>
-    <button onclick="stopAnimation()">Stop</button>
-  </div>
+    <div class="controls">
+        <button onclick="startAnimation()">Start</button>
+        <button onclick="stopAnimation()">Stop</button>
+    </div>
 
-  <div class="scene" id="scene">
-    <div class="train" id="train"></div>
-  </div>
-  <!-- Sound files -->
-  <audio id="startSound" src="train_whistle.mp3"></audio>
-  <audio id="stopSound" src="trainstops.mp3"></audio>
+    <div class="scene" id="scene">
+        <div class="train" id="train"></div>
+    </div>
+    <!-- Sound files -->
+    <audio id="startSound" src="train_whistle.mp3"></audio>
+    <audio id="stopSound" src="trainstops.mp3"></audio>
 
-  <script>
-    const train = document.getElementById('train');
-    const scene = document.getElementById('scene');
-    const startSound = document.getElementById('startSound');
-    const stopSound = document.getElementById('stopSound');
+    <script>
+        const train = document.getElementById('train');
+        const scene = document.getElementById('scene');
+        const startSound = document.getElementById('startSound');
+        const stopSound = document.getElementById('stopSound');
 
-    function startAnimation() {
-      train.classList.add('animate');
-      scene.classList.add('animate');
+        function startAnimation() {
+            train.classList.add('animate');
+            scene.classList.add('animate');
             stopSound.pause();
-      stopSound.currentTime = 0;
-      startSound.currentTime = 0;
-      startSound.play();
-    }
+            stopSound.currentTime = 0;
+            startSound.currentTime = 0;
+            startSound.play();
+        }
 
-    function stopAnimation() {
-      train.classList.remove('animate');
-      scene.classList.remove('animate');
-       startSound.pause();
-      startSound.currentTime = 0;
-      stopSound.currentTime = 0;
-      stopSound.play();
-    }
-  </script>
+        function stopAnimation() {
+            train.classList.remove('animate');
+            scene.classList.remove('animate');
+            startSound.pause();
+            startSound.currentTime = 0;
+            stopSound.currentTime = 0;
+            stopSound.play();
+        }
+    </script>
 
 </body>
+
 </html>
