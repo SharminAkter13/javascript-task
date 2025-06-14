@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Number Pyramid Pattern — I</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Number Pyramid Pattern — I</h1>
     <script>
-        let rows = 5;
+      let rows = 5;
+      let pattern = "";
 
-// pattern variable carries the final pattern in string format
-let pattern = "";
-
-// outer loop runs for `rows` no. of times
-for (let n = 1; n <= rows; n++) {
-   // Inner Loop - I -> for the spaces
-   for (let space = 1; space <= rows - n; space++) {
-      pattern += "&nbsp;&nbsp; ";
-   }
-
-   // Inner Loop - II -> for the numbers
-   for (let num = 1; num <= 2 * n - 1; num++) {
-      pattern += num;
-   }
-
-   pattern += "<br>\n";
-}
-console.log(pattern);
-    document.write(pattern );
-
+      // outer loop runs for `rows` no. of times
+      for (n = 1; n <= rows; n++) {
+        // Inner Loop - I -> for the spaces
+        for (s = 1; s <= rows - n; s++) {
+          pattern += " ";
+        }
+        // Inner Loop - II -> for the numbers
+        for (num = 1; num <= 2 * n - 1; num++) {
+          pattern += num;
+        }
+        pattern += "\n";
+      }
+      console.log(pattern);
+      //   document.write(pattern);
     </script>
-</body>
+  </body>
 </html>
