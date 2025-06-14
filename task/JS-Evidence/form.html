@@ -5,6 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM</title>
+    <style>
+        div{
+            background-color: rgb(245, 196, 168);
+            width: 350px;
+            height: 550px;
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        legend{
+            text-align: center;
+            font-size: 15pt;
+            font-weight: bold;
+            border: 3px solid rgb(140, 141, 143);
+        }
+
+        fieldset{
+            border-radius: 10px;
+            padding: 10px;
+        }
+        input[type="text"],input[type="email"],textarea, select{
+            width: 80%;
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+    </style>
 </head>
 
 <body>
@@ -21,7 +52,7 @@
                 Address: <br>
                 <textarea name="address" placeholder="please enter your name"></textarea>
                 <br><br>
-                Result: &nbsp;
+                Result: <br>
                 <select name="result" id="result">
                     <option value="A+">A+</option>
                     <option value="A">A</option>
