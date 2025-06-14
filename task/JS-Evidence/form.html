@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+
+<body>
+    <div>
+        <form name="form">
+            <fieldset>
+                <legend>FORM</legend>
+                Name: <br>
+                <input type="text" name="fname" placeholder="please enter your name">
+                <br><br>
+                Email: <br>
+                <input type="text" name="email" placeholder="please enter your name">
+                <br><br>
+                Address: <br>
+                <textarea name="address" placeholder="please enter your name"></textarea>
+                <br><br>
+                Result: &nbsp;
+                <select name="result" id="result">
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                </select>
+                <br><br>
+                Gender:
+                <input type="radio" name="gen" value="Male">Male
+                <input type="radio" name="gen" value="Female">Female
+                <input type="radio" name="gen" value="Others">Others
+                <br><br>
+                Group:
+                <input type="checkbox" name="grp" value="Business Studies">Business Studies
+                <input type="checkbox" name="grp" value="Science ">Science 
+                <input type="checkbox" name="grp" value="Arts">Arts
+                <br><br>
+                <input type="submit" value="Submit" onclick="f-window()" style="background-color: rgb(218, 102, 36);
+              color: rgb(252, 251, 251);
+              font-weight: bold;
+              border-radius: 5px;
+              padding: 8px 15px; 
+              cursor: pointer; ">
+
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
