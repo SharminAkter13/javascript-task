@@ -6,51 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORM</title>
     <style>
-        div{
+        div {
             background-color: rgb(245, 196, 168);
             width: 350px;
-            height: 550px;
+            height: 510px;
             padding: 10px;
             margin: 20px auto;
             border-radius: 10px;
             font-weight: bold;
         }
-        legend{
+
+        legend {
             text-align: center;
             font-size: 15pt;
             font-weight: bold;
             border: 3px solid rgb(140, 141, 143);
         }
 
-        fieldset{
+        fieldset {
             border-radius: 10px;
             padding: 10px;
         }
-        input[type="text"],input[type="email"],textarea, select{
-            width: 80%;
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 97%;
             padding: 8px 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
         }
-        
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
     </style>
 </head>
 
 <body>
     <div>
-        <form name="form">
+        <form name="f">
             <fieldset>
                 <legend>FORM</legend>
                 Name: <br>
                 <input type="text" name="fname" placeholder="please enter your name">
                 <br><br>
                 Email: <br>
-                <input type="text" name="email" placeholder="please enter your name">
+                <input type="text" name="email" placeholder="please enter your email">
                 <br><br>
                 Address: <br>
-                <textarea name="address" placeholder="please enter your name"></textarea>
+                <textarea name="address" placeholder="please enter your address"></textarea>
                 <br><br>
                 Result: <br>
                 <select name="result" id="result">
@@ -67,11 +76,11 @@
                 <br><br>
                 Group:
                 <input type="checkbox" name="grp" value="Business Studies">Business Studies
-                <input type="checkbox" name="grp" value="Science ">Science 
+                <input type="checkbox" name="grp" value="Science ">Science
                 <input type="checkbox" name="grp" value="Arts">Arts
                 <br><br>
-                <input type="submit" value="Submit" onclick="f-window()" style="background-color: rgb(218, 102, 36);
-              color: rgb(252, 251, 251);
+                <input type="button" value="Submit" onclick="f_window()" style="background-color: rgb(248, 146, 90);
+              color: rgb(26, 24, 24);
               font-weight: bold;
               border-radius: 5px;
               padding: 8px 15px; 
@@ -81,6 +90,51 @@
             </fieldset>
         </form>
     </div>
+    <script>
+        function f_window() {
+            var title = "Form Details";
+            var name = document.f.fname.value;
+            var email = document.f.email.value;
+            var address = document.f.address.value;
+            var result = document.f.result.value;
+            var gender = "";
+            var group = [];
+
+            for (i = 0; i < document.f.gen.length; i++) {
+                if (document.f.gen[i].checked) {
+                    gender = document.f.gen[i].value;
+                }
+            }
+
+            for (j = 0; j < document.f.grp.length; j++) {
+                if (document.f.grp[j].checked) {
+                    group.push(document.f.grp[j].value);
+                }
+            }
+
+            let p = open(" ", "", "width=400,height=400,top=200,left=300,resizeable=yes");
+
+            with (p.document) {
+                write("<html><head><title>" + title + "</title></head>");
+                write("<body style='background-color: rgb(136, 161, 243);  padding: 20px;'>");
+                write("<div style='border:1px solid gray; padding:10px; background-color:rgb(195, 211, 247); width:300px; height:300px; margin:20px auto;'>"
+                );
+                write("Name: " + name + "<br><br>");
+                write("Email: " + email + "<br><br>");
+                write("Address: " + address + "<br><br>");
+                write("Result: " + result + "<br><br>");
+                write("Gender: " + gender + "<br><br>");
+                // write( "Group: " + group.join(", ") + "<br><br>");
+                 write(
+            "Group: " +
+              (group.length > 0 ? group.join(", ") : "None selected") +
+              "<br><br>"
+          );
+                write("</div></body></html>");
+                close();
+            }
+        }   
+    </script>
 </body>
 
 </html>
