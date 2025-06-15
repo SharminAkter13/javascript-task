@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FORM</title>
+    <title>PROCEDURALFORM</title>
     <style>
+      body {
+        background-image: url(https://img.freepik.com/free-psd/abstract-background-design_1297-78.jpg?ga=GA1.1.214933215.1749961236&semt=ais_hybrid&w=740);
+        background-repeat: repeat;
+        background-size: cover;
+      }
       div {
         background-color: rgb(245, 196, 168);
         width: 350px;
         height: 510px;
         padding: 10px;
-        margin: 20px auto;
+        margin: 30px auto;
         border-radius: 10px;
         font-weight: bold;
       }
@@ -29,6 +34,7 @@
 
       input[type="text"],
       input[type="email"],
+      input[type="button"],
       textarea,
       select {
         width: 97%;
@@ -98,6 +104,7 @@
               border-radius: 5px;
               padding: 8px 15px;
               cursor: pointer;
+              border: 1px solid black;
             "
           />
         </fieldset>
@@ -144,12 +151,7 @@
           write("Address: " + address + "<br><br>");
           write("Result: " + result + "<br><br>");
           write("Gender: " + gender + "<br><br>");
-          // write( "Group: " + group.join(", ") + "<br><br>");
-          write(
-            "Group: " +
-              (group.length > 0 ? group.join(", ") : "None selected") +
-              "<br><br>"
-          );
+          write("Group: " + group.join(", ") + "<br><br>");
           write("</div></body></html>");
           close();
         }
