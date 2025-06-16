@@ -96,9 +96,10 @@
             constructor(formInfo) {
                 for (let [name, value] of formInfo) {
                     this[name] = formInfo.getAll(name).join(',');
+                    // The getAll() method of the FormData interface returns all the values associated with a given key from within a FormData object.
                 }
             }
-
+// getAll() function retrieve all items from a collection, list, or data structure.
             getView() {
                 var view = "Name: " + this.fname + "<br>";
                 view += "Email: " + this.email + "<br>";
