@@ -126,6 +126,16 @@
           show.document.write(view);
         }
       }
+
+       form1.onsubmit=async(e)=>{
+		e.preventDefault();
+		form=document.querySelector('#form1');
+		form_data=new FormData(form);
+			
+		f=new FormValues(form_data);
+		f.getData();
+	}
+
     </script>
   </body>
 </html>
