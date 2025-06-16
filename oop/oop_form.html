@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,6 +30,7 @@
 
         input[type="text"],
         input[type="email"],
+        input[type="submit"],
         textarea,
         select {
             width: 97%;
@@ -45,6 +47,7 @@
         }
     </style>
 </head>
+
 <body>
     <div>
         <form name="f">
@@ -88,5 +91,26 @@
             </fieldset>
         </form>
     </div>
+    <script>
+        class FormDetails {
+            constructor(formInfo) {
+                for (let [name, value] of formInfo) {
+                    this[name] = formInfo.getAll(name).join(',');
+                }
+            }
+
+            getView() {
+                var view = "Name: " + this.fname + "<br>";
+                view += "Email: " + this.email + "<br>";
+                view += "Address: " + this.address + "<br>";
+                view += "Result: " + this.result + "<br>";
+                view += "Gender: " + this.gender + "<br>";
+                view += "Subject: " + this.sub + "<br>";
+                show = window.open("", "", "width=400px, height=400px");
+                show.document.write(view);
+            }
+        }
+    </script>
 </body>
+
 </html>
