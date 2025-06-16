@@ -1,117 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Object Oriented Form</title>
     <style>
-        div {
-            background-color: #cb66f7;
-            width: 400px;
-            height: 540px;
-            padding: 10px;
-            margin: 20px auto;
-            border-radius: 10px;
-            font-weight: bold;
-        }
+      div {
+        background-color: #deaaf5;
+        width: 400px;
+        height: 540px;
+        padding: 10px;
+        margin: 20px auto;
+        border-radius: 10px;
+        font-weight: bold;
+      }
 
-        legend {
-            text-align: center;
-            font-size: 15pt;
-            font-weight: bold;
-            border: 3px solid rgb(220, 223, 230);
-        }
+      legend {
+        text-align: center;
+        font-size: 15pt;
+        font-weight: bold;
+        border: 3px solid rgb(220, 223, 230);
+      }
 
-        fieldset {
-            border-radius: 10px;
-            padding: 10px;
-        }
+      fieldset {
+        border-radius: 10px;
+        padding: 10px;
+      }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="submit"],
-        textarea,
-        select {
-            width: 99%;
-            padding: 8px 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+      input[type="text"],
+      input[type="email"],
+      input[type="submit"],
+      textarea,
+      select {
+        width: 99%;
+        padding: 8px 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-        input[type="radio"],
-        input[type="checkbox"] {
-            margin-right: 5px;
-        }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div>
-        <form name="f">
-            <fieldset>
-                <legend>REGISTRATION FORM</legend>
-                Name: <br>
-                <input type="text" name="fname" placeholder="please enter your name">
-                <br><br>
-                Email: <br>
-                <input type="text" name="email" placeholder="please enter your email">
-                <br><br>
-                Address: <br>
-                <textarea name="address" placeholder="please enter your address"></textarea>
-                <br><br>
-                Result: <br>
-                <select name="result" id="result">
-                    <option value="A+">A+</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                </select>
-                <br><br>
-                Gender:
-                <input type="radio" name="gen" value="Male">Male
-                <input type="radio" name="gen" value="Female">Female
-                <input type="radio" name="gen" value="Others">Others
-                <br><br>
-                Subject:
-                <input type="checkbox" name="sub" value="Accounting">Accounting
-                <input type="checkbox" name="sub" value="Finance & Banking ">Finance & Banking
-                <input type="checkbox" name="sub" value="Statistic">Statistic
-                <br><br>
-                <input type="submit" value="Submit" name="sbutton" style="background-color: #a61be3;
+      <form name="f">
+        <fieldset>
+          <legend>REGISTRATION FORM</legend>
+          Name: <br />
+          <input
+            type="text"
+            name="fname"
+            placeholder="please enter your name"
+          />
+          <br /><br />
+          Email: <br />
+          <input
+            type="text"
+            name="email"
+            placeholder="please enter your email"
+          />
+          <br /><br />
+          Address: <br />
+          <textarea
+            name="address"
+            placeholder="please enter your address"
+          ></textarea>
+          <br /><br />
+          Result: <br />
+          <select name="result" id="result">
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+          <br /><br />
+          Gender:
+          <input type="radio" name="gen" value="Male" />Male
+          <input type="radio" name="gen" value="Female" />Female
+          <input type="radio" name="gen" value="Others" />Others <br /><br />
+          Subject:
+          <input type="checkbox" name="sub" value="Accounting" />Accounting
+          <input type="checkbox" name="sub" value="Finance & Banking " />Finance
+          & Banking
+          <input type="checkbox" name="sub" value="Statistic" />Statistic
+          <br /><br />
+          <input
+            type="submit"
+            value="Submit"
+            name="sbutton"
+            style="
+              background-color: #c23dfc;
               color: rgb(241, 232, 232);
               font-weight: bold;
               border-radius: 5px;
-              padding: 8px 15px; 
-              cursor: pointer; ">
-
-
-            </fieldset>
-        </form>
+              padding: 8px 15px;
+              cursor: pointer;
+            "
+          />
+        </fieldset>
+      </form>
     </div>
     <script>
-        class FormDetails {
-            constructor(formInfo) {
-                for (let [name, value] of formInfo) {
-                    this[name] = formInfo.getAll(name).join(',');
-                    // The getAll() method of the FormData interface returns all the values associated with a given key from within a FormData object.
-                }
-            }
-// getAll() function retrieve all items from a collection, list, or data structure.
-            getView() {
-                var view = "Name: " + this.fname + "<br>";
-                view += "Email: " + this.email + "<br>";
-                view += "Address: " + this.address + "<br>";
-                view += "Result: " + this.result + "<br>";
-                view += "Gender: " + this.gender + "<br>";
-                view += "Subject: " + this.sub + "<br>";
-                show = window.open("", "", "width=400px, height=400px");
-                show.document.write(view);
-            }
+      class FormDetails {
+        constructor(formInfo) {
+          for (let [name, value] of formInfo) {
+            this[name] = formInfo.getAll(name).join(",");
+            // The getAll() method of the FormData interface returns all the values associated with a given key from within a FormData object.
+          }
         }
+        // getAll() function retrieve all items from a collection, list, or data structure.
+        getView() {
+          var view = "Name: " + this.fname + "<br>";
+          view += "Email: " + this.email + "<br>";
+          view += "Address: " + this.address + "<br>";
+          view += "Result: " + this.result + "<br>";
+          view += "Gender: " + this.gender + "<br>";
+          view += "Subject: " + this.sub + "<br>";
+          show = window.open("", "", "width=400px, height=400px");
+          show.document.write(view);
+        }
+      }
     </script>
-</body>
-
+  </body>
 </html>
