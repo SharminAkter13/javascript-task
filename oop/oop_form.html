@@ -49,7 +49,7 @@
 
   <body>
     <div>
-      <form name="f">
+      <form name="f" id="f">
         <fieldset>
           <legend>REGISTRATION FORM</legend>
           Name: <br />
@@ -110,7 +110,7 @@
       class FormDetails {
         constructor(formInfo) {
           for (let [name, value] of formInfo) {
-            this[name] = formInfo.getAll(name).join(",");
+            this[name] = formInfo.getAll(name).join(", ");
             // The getAll() method of the FormData interface returns all the values associated with a given key from within a FormData object.
           }
         }
@@ -120,22 +120,21 @@
           view += "Email: " + this.email + "<br>";
           view += "Address: " + this.address + "<br>";
           view += "Result: " + this.result + "<br>";
-          view += "Gender: " + this.gender + "<br>";
+          view += "Gender: " + this.gen + "<br>";
           view += "Subject: " + this.sub + "<br>";
-          show = window.open("", "", "width=400px, height=400px");
+          let show = window.open("", "", "width=400px, height=400px");
           show.document.write(view);
         }
       }
 
-       f.onsubmit=async(e)=>{
-		e.preventDefault();
-		form1=document.querySelector('f');
-		f_details=new FormData(form1);
-			
-		frm=new FormDetails(f_details);
-		frm.getData();
-	}
+      f.onsubmit = async (e) => {
+        e.preventDefault();
+        form1 = document.querySelector("#f");
+        f_details = new FormData(form1);
 
+        frm = new FormDetails(f_details);
+        frm.getView();
+      };
     </script>
   </body>
 </html>
