@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Form</title>
+    <style>
+        div{
+            background-color: antiquewhite;
+            width: 400px;
+            height: 550px;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 30px auto;
+            font-weight: bold;
+        }
+        legend{
+            text-align: center;
+            font-size: 15pt;
+            font-weight: bold;
+            border: 2px solid rgb(163, 162, 161);
+        }
+
+        fieldset{
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        input[type="text"],input[type="email"],input[type="submit"],textarea,select{
+
+            width: 99%; 
+            padding: 8px 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;           
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="#" name="f" id="f" >
+            <fieldset>
+                <legend>REGISTRATION FORM</legend>
+
+                Name: <br>
+                <input type="text" name="fname" placeholder="please enter your name" > 
+                <br><br>
+                Email: <br>
+                <input type="text" name="email" placeholder="please enter your email" >
+                <br><br>            
+                Address: <br>
+                <textarea name="address" placeholder="please enter your address" ></textarea>
+                <br><br>
+                Result: <br>
+                <select name="result" >
+                    <option value="A+">A+</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+                <br><br>
+                Gender: 
+                <input type="radio" name="gen" value="Male">Male
+                <input type="radio" name="gen" value="Female">Female
+                <input type="radio" name="gen" value="Others">Others
+                <br><br>
+                Subject:
+                <input type="checkbox" name="sub" value="Bangla">Bangla
+                <input type="checkbox" name="sub" value="English">English
+                <input type="checkbox" name="sub" value="Math">Math
+                <input type="checkbox" name="sub" value="Science">Science
+                <br><br>
+                <input type="submit" value="Submit" name="sbutton" style="background-color: rgb(245, 207, 157); font-weight: bold; border-radius: 5px; padding: 8px 15px;cursor: pointer;">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
