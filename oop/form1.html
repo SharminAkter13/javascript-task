@@ -81,7 +81,7 @@
         class FormDetails{
             constructor (formInfo){
                 for(let [name,value] of formInfo){
-                    this.[name]= formInfo.getAll(name).join(", ");
+                    this[name]= formInfo.getAll(name).join(", ");
                 }
             }
             getView(){
@@ -94,6 +94,15 @@
                 show=window.open("","","width=400px, height=400px");
                 show.document.write(view);
             }
+        }
+
+        f.onsubmit=async(e)=>{
+            e.preventDefault();
+            form1=document.querySelector("#f");
+            f_details =new FormDeata(form1);
+
+            frm = new FormDetails(f_details);
+            frm.getView()
         }
     </script>
 </body>
